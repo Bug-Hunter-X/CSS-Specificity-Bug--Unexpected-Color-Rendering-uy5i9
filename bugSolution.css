@@ -1,0 +1,22 @@
+To solve the specificity issue, we can improve the order of styles or add more weight to the selector which we want to have more precedence.
+
+```css
+/*bugSolution.css*/
+div {
+  color: blue;
+}
+
+.myClass {
+  color: red;
+}
+
+#myId {
+  color: green;
+}
+
+#myId.myClass {
+  color: purple !important; /* Using !important to ensure the purple color is applied */
+}
+```
+
+Alternatively, we can restructure the CSS and use more specific selectors to control styles more predictably, minimizing the need for `!important`.
