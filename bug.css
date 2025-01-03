@@ -1,0 +1,21 @@
+The following CSS code results in unexpected behavior in some browsers because of specificity issues:
+
+```css
+div {
+  color: blue;
+}
+
+.myClass {
+  color: red;
+}
+
+#myId {
+  color: green;
+}
+
+#myId.myClass {
+  color: purple; /* This should override both div and .myClass, but might not in some cases */
+}
+```
+
+In this example, the `#myId.myClass` selector has high specificity, but it might not always override the `div` selector in all browsers, especially if inheritance or other complex rules are involved. This can lead to unexpected color results depending on the browser's implementation details.  Another common issue is when specificity is incorrectly predicted, resulting in styles being unintentionally overwritten.
